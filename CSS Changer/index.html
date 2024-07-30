@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>CSS-Modifier</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>CSS Modifier</h1>
+      <h3>JavaScript</h3>
+      <div class="css-modifier">
+        <label for="">Color</label>
+        <input type="color" name="color" id="color" value="#9fd3c7" />
+        <label for="">Width</label>
+        <input
+          type="range"
+          name="width"
+          id="width"
+          value="50"
+          min="50"
+          max="100"
+        />
+        <label for="">Padding</label>
+        <input
+          type="range"
+          name="padding"
+          id="padding"
+          value="0"
+          min="0"
+          max="100"
+        />
+        <label for="">Border-radius</label>
+        <input
+          type="range"
+          name="border-radius"
+          id="border-radius"
+          value="0"
+          min="0"
+          max="50"
+        />
+        <label for="">Blur</label>
+        <input type="range" name="blur" value="0" id="blur" min="0" max="50" />
+      </div>
+      <!-- <img src="https://picsum.photos/seed/picsum/300/200" alt="image" /> -->
+      <img src="Kangaroo.jpg" alt="img" />
+    </div>
+    <script>
+      const elements = document.querySelectorAll("input");
+      elements.forEach((element) => {
+        element.addEventListener("input", () => {
+          console.log(`--${element.name}`);
+          document.documentElement.style.setProperty(
+            `--${element.name}`,
+            element.value
+          );
+        });
+      });
+    </script>
+  </body>
+</html>

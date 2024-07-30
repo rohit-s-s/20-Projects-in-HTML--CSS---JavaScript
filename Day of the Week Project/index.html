@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week of Day</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h3>Today is:</h3>
+      <h1 id="day"></h1>
+      <p id="qoute"></p>
+    </div>
+    <script>
+      const currentDay = new Date();
+      let day;
+      let qoute;
+      const dayNumber = currentDay.getDay()
+      switch (dayNumber) {
+        case 0:
+          day = "Sunday";
+          qoute = "Sunny Sunday";
+          break
+        case 1:
+          day = "Monday";
+          qoute = "Monday mellow";
+          break
+        case 2:
+          day = "Tuesday";
+          qoute = "Tacho Tuesday tranquility";
+          break
+        case 3:
+          day = "Wednesday";
+          qoute = "Wednesday wind--down";
+          break
+        case 4:
+          day = "Thursday";
+          qoute = "Thursday Throw-back chill";
+          break
+        case 5:
+          day = "Friday";
+          qoute = "Friday feels";
+          break
+        case 6:
+          day = "Saturday";
+          qoute = "Saturday  Sock";
+          break
+      }
+      let setDay = document.getElementById("day")
+      let setQoute = document.getElementById("qoute")
+      setDay.textContent = day
+      setQoute.textContent = qoute
+    </script>
+  </body>
+</html>
