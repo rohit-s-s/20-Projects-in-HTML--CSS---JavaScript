@@ -1,0 +1,25 @@
+body{
+    display: flex;
+    justify-content: center;
+    background-color: green;
+}
+
+.container{
+    width: 80%;
+    display: flex;
+    background-color: #fff;
+    height: 200px;
+    gap: 20px;
+    padding:0px 10px 10px 10px;
+}
+
+.container div{
+    flex: 1;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    
+}
