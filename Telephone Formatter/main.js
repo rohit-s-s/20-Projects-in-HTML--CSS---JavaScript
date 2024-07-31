@@ -1,20 +1,23 @@
-const container = document.createElement("div");
-document.querySelector(".root").appendChild(container);
+const input = document.getElementById("number");
 
-const input = document.createElement("input");
-input.setAttribute("type", "text");
-input.addEventListener("change", (e) => textFormatter(e));
-container.appendChild(input);
+let firstThreeDigits = "";
+let restDigits = "";
+let result = "";
+let previous = "";
+
+input.addEventListener("input", textFormatter);
 
 function textFormatter(e) {
-  let prefix = new String();
-  let suffix = new String();
-  let result = new String();
-  const value = e.target.value;
-  if (value.length >= 3) {
-    prefix = value.slice(0, 3);
-    suffix = value.slice(3)
-    result = `(${prefix})-`+`${suffix}`
-  } 
-  input.value = result
+  const inputValue = e.target.value;
+  if(inputValue.length === 4 && inputValue.length > previous.length){
+    firstThreeDigits = inputValue.substring(0,3)
+    const result = `+(${firstThreeDigits})-${inputValue.substring(3)}`
+    console.log(result)
+    input.value = result
+  }else{
+    input.value = e.target.value
+    console.log(inputValue)
+  }
+  previous = inputValue
+  
 }
