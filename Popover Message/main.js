@@ -1,17 +1,13 @@
-const button = document.querySelector(".btn")
-button.addEventListener("click", popUp)
+const container = document.querySelector(".container")
+const openBtn = document.querySelector(".open_btn")
+const closeBtn = document.querySelector(".close_btn")
 
-const container = button.parentElement;
-console.log(container)
+openBtn.addEventListener("click",getPopup)
+closeBtn.addEventListener("click",getPopup)
 
-function popUp(){
-    // const header = document.createElement("h1");
-    // header.textContent = "Message"
-    // const message = document.createElement("p")
-    // message.textContent = "Hello, World!";
-    button.textContent = "Close";
-    
-    // container.appendChild(header)
-    // container.appendChild(message)
+
+function getPopup(){
+    container.classList.toggle("visible")
+    openBtn.classList.toggle("hidden")
 
 }
